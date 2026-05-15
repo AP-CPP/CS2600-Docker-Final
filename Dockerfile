@@ -1,13 +1,21 @@
-FROM python:3.11-slim
- 
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y \
+    bash \
+    curl \
+    netcat-openbsd \
+    git \
+    make \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
- 
-COPY required.txt .
- 
-RUN pip install --no-cache-dir -r required.txt
- 
-COPY . /app/
- 
-EXPOSE 8080
- 
-CMD ["python", "image.py"]
+
+ARG REPO_URL
+
+RUN git clone "$REPO_URL" /app/project
+
+WORKDIR /app/project
+
+RUN chmod +x server.sh client.sh
+
+CMD ["bash"]
