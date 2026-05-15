@@ -1,0 +1,10 @@
+How I setup docker on my laptop and gpc
+
+Step 1 - Do a sudo apt upda
+Step 2 - Install docker with sudo apt install -y docker.io docker-compose
+Step 3 - Start up docker with sudo systemctl start docker
+Step 4 - Check if docker is running with sudo systemctl status docker
+Step 5 - Run a basic image *Hello world with the command sudo docker run hello-world
+Step 6 - Assign user to stop using sudo with sudo usermod -aG docker $USER
+Step 7 - Create a new group with newgrp docker
+Step 8 - Confirm it works with docker run hello-world
