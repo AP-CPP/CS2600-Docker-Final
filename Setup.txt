@@ -1,6 +1,6 @@
 How I setup docker on my laptop and gpc
 
-Step 1 - Do a sudo apt upda
+Step 1 - Do a sudo apt update
 Step 2 - Install docker with sudo apt install -y docker.io docker-compose
 Step 3 - Start up docker with sudo systemctl start docker
 Step 4 - Check if docker is running with sudo systemctl status docker
@@ -8,3 +8,7 @@ Step 5 - Run a basic image *Hello world with the command sudo docker run hello-w
 Step 6 - Assign user to stop using sudo with sudo usermod -aG docker $USER
 Step 7 - Create a new group with newgrp docker
 Step 8 - Confirm it works with docker run hello-world
+Step 9 - Once donwload setup docker account to push the github repo to docker.
+Step 10 - Once an account has been created generate personal access token in docker
+Step 11 - Add access token to local github repo in sercets 
+step 12 - Setup github actions to push github repo to docker repo 
